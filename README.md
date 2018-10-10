@@ -1,4 +1,4 @@
-### Introduction
+## Introduction
 
 This second programming assignment will require you to write an R
 function that is able to cache potentially time-consuming computations.
@@ -27,8 +27,7 @@ really a list containing a function to
 3.  set the value of the mean
 4.  get the value of the mean
 
-<!-- -->
-
+```R
     makeVector <- function(x = numeric()) {
             m <- NULL
             set <- function(y) {
@@ -42,6 +41,7 @@ really a list containing a function to
                  setmean = setmean,
                  getmean = getmean)
     }
+```
 
 The following function calculates the mean of the special "vector"
 created with the above function. However, it first checks to see if the
@@ -49,7 +49,7 @@ mean has already been calculated. If so, it `get`s the mean from the
 cache and skips the computation. Otherwise, it calculates the mean of
 the data and sets the value of the mean in the cache via the `setmean`
 function.
-
+```R
     cachemean <- function(x, ...) {
             m <- x$getmean()
             if(!is.null(m)) {
@@ -61,6 +61,7 @@ function.
             x$setmean(m)
             m
     }
+```
 
 ### Assignment: Caching the Inverse of a Matrix
 
